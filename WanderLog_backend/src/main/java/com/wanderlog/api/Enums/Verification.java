@@ -1,7 +1,5 @@
 package com.wanderlog.api.Enums;
 
 public enum Verification {
-    UNVERIFIED,
-    VERIFIED,
-    REJECTED
+    NONE, PHOTO_EXIF, GPS_CHECKIN
 }
