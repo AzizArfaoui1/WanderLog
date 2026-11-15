@@ -6,6 +6,9 @@ import jakarta.persistence.*;
 public class TripStop {
     @Id
     private Long id;
+    private int dayIndex;
+    private int position;
+    private int plannedMinutes;
 
     public void setId(Long id) {
         this.id = id;

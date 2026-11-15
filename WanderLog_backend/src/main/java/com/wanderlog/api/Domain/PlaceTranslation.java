@@ -6,6 +6,9 @@ import jakarta.persistence.*;
 public class PlaceTranslation {
     @Id
     private Long id;
+    private String locale;
+    private String name;
+    private String description;
 
     public void setId(Long id) {
         this.id = id;

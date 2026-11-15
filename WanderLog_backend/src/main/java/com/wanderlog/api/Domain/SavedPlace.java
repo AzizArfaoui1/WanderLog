@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 public class SavedPlace {
     @Id
     private Long id;
+    private String note;
 
     public void setId(Long id) {
         this.id = id;

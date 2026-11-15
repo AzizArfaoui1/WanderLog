@@ -7,6 +7,9 @@ import jakarta.persistence.Id;
 public class PlaceStats {
     @Id
     private Long id;
+    private int visitCount;
+    private float medianMinutes;
+    private float bayesRating;
 
     public void setId(Long id) {
         this.id = id;
