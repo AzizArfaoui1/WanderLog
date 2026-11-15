@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -15,10 +18,16 @@ import lombok.Setter;
 
 public class City {
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Double latitude;
     private Double longitude;
 
 
+    @OneToMany(mappedBy = "city")
+    private List<Place> places = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Country country;
 }

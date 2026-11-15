@@ -7,6 +7,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -15,6 +18,7 @@ import lombok.Setter;
 
 public class Place {
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Double latitude;
@@ -25,5 +29,22 @@ public class Place {
     @Enumerated(EnumType.STRING)
     private ModerationStatus status;
 
+    @OneToMany(mappedBy = "place")
+    private List<Visit> visits = new ArrayList<>();
+
+    @OneToMany(mappedBy = "place")
+    private List<TripStop> tripStops = new ArrayList<>();
+
+    @OneToMany(mappedBy = "place")
+    private List<SavedPlace> savedPlaces = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private City city;
+
+    @OneToMany(mappedBy = "place" , cascade = CascadeType.ALL , orphanRemoval = true)
+    private List<PlaceTranslation> placeTranslations = new ArrayList<>();
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Country country;
 
 }

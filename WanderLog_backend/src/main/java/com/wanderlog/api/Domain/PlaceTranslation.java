@@ -10,10 +10,13 @@ import lombok.Setter;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class PlaceTranslation {
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
     private String locale;
     private String name;
     private String description;
 
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Place place;
 }

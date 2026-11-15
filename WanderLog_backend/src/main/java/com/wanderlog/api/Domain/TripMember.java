@@ -14,9 +14,15 @@ import lombok.Setter;
 @AllArgsConstructor
 public class TripMember {
     @Id
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Long id;
     @Enumerated(EnumType.STRING)
     private TripRole role;
 
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Trip trip;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User user;
 }
