@@ -1,7 +1,6 @@
 package com.wanderlog.api.Domain;
 
 import jakarta.persistence.*;
-import jakarta.persistence.Id;
 
 @Entity
 public class Trip {
