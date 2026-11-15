@@ -1,8 +1,13 @@
 package com.wanderlog.api.Domain;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class PlaceTranslation {
     @Id
     private Long id;
@@ -10,11 +15,5 @@ public class PlaceTranslation {
     private String name;
     private String description;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public Long getId() {
-        return id;
-    }
 }

@@ -2,9 +2,19 @@ package com.wanderlog.api.Domain;
 
 import jakarta.persistence.*;
 import com.wanderlog.api.Enums.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Visit {
     @Id
     private Long id;
@@ -22,11 +32,5 @@ public class Visit {
     @Enumerated(EnumType.STRING)
     private ModerationStatus status;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
-    public Long getId() {
-        return id;
-    }
 }

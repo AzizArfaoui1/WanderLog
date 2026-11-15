@@ -2,8 +2,17 @@ package com.wanderlog.api.Domain;
 
 import jakarta.persistence.*;
 import com.wanderlog.api.Enums.Continent;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+
 public class Country {
     @Id
     private Long id;
@@ -12,11 +21,4 @@ public class Country {
     @Enumerated(EnumType.STRING)
     private Continent continent;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }
