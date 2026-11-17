@@ -1,4 +1,4 @@
-﻿package com.wanderlog.api.Services;
+package com.wanderlog.api.Services;
 
-public class TripService {
+public interface TripService {
 }
